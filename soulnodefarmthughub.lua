@@ -44,7 +44,8 @@ if game.PlaceId == 7056922815 then -- lobby ------------------------------------
     pressbutton(game:GetService("Players").LocalPlayer.PlayerGui.IsMobile.Frame, game:GetService("Players").LocalPlayer.PlayerGui.IsMobile.Frame.No)
     
     wait(6)
-    keypress(80)
+    game:GetService("VirtualInputManager"):SendKeyEvent(true, "P", false, game); wait(1)
+    local a={[1]={["inputType"]=Enum.UserInputType.MouseButton1,["keyCode"]=Enum.KeyCode.Unknown}}game:GetService("ReplicatedStorage").Remotes.Input:FireServer(unpack(a))
     wait(5)
     
     pressbutton(game:GetService("Players").LocalPlayer.PlayerGui.HUD.Meditation, game:GetService("Players").LocalPlayer.PlayerGui.HUD.Meditation.Options.List.BattleSecondary)
