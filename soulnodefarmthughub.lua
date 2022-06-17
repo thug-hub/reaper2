@@ -1,12 +1,12 @@
 if game.PlaceId == 7056922815 then -- lobby ------------------------------------------------------------
     repeat wait() until game:IsLoaded()
     
-    
+    --[[
     for count = 720, 1, -1 do
     wait(1)
 	print(count)
     end
-    
+    --]]--
 
     function pressbutton(a, b)
         local z = a.Visible
@@ -30,13 +30,14 @@ if game.PlaceId == 7056922815 then -- lobby ------------------------------------
     
     if getgenv().Slot == 1 then
         local slott = game:GetService("Players").LocalPlayer.PlayerGui.IsMobile.SLOT.Slots.Slot1.Load
+        pressbutton(game:GetService("Players").LocalPlayer.PlayerGui.IsMobile.SLOT, slott)
     elseif getgenv().Slot == 2 then
         local slott = game:GetService("Players").LocalPlayer.PlayerGui.IsMobile.SLOT.Slots.Slot2.Load
+        pressbutton(game:GetService("Players").LocalPlayer.PlayerGui.IsMobile.SLOT, slott)
     elseif getgenv().Slot == 3 then
         local slott = game:GetService("Players").LocalPlayer.PlayerGui.IsMobile.SLOT.Slots.Slot3.Load
+        pressbutton(game:GetService("Players").LocalPlayer.PlayerGui.IsMobile.SLOT, slott)
     end
-    
-    pressbutton(game:GetService("Players").LocalPlayer.PlayerGui.IsMobile.SLOT, slott)
     
     pressbutton(game:GetService("Players").LocalPlayer.PlayerGui.IsMobile.WP, game:GetService("Players").LocalPlayer.PlayerGui.IsMobile.WP.PlayBT)
     
