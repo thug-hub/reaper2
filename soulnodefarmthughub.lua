@@ -1,12 +1,8 @@
-getgenv().Shikai = "Katen Kyokotsu"
-getgenv().Distance = 7
-
-
 if game.PlaceId == 7056922815 then -- lobby ------------------------------------------------------------
     repeat wait() until game:IsLoaded()
-
+    
     wait(720)
-
+    
     function pressbutton(a, b)
         local z = a.Visible
         if z == true then
@@ -44,12 +40,14 @@ if game.PlaceId == 7056922815 then -- lobby ------------------------------------
     local txt = game:GetService("Players").LocalPlayer.PlayerGui.HUD.Error.Text
     local split = string.split(tostring(txt), " ")
     local a = tonumber(split[5])
-    local waittime = 60*a
+    local waittime = 60*a+5
     wait(waittime)
     end
     
 elseif game.PlaceId == 7298553006 then -- arena ----------------------------------------------
     repeat wait() until game:IsLoaded()
+    
+    wait(5)
     
     local plr = game:GetService("Players").LocalPlayer
 local tweenService = game:GetService("TweenService")
@@ -92,6 +90,11 @@ end);
 getgenv().Autofarm = true
     
     while getgenv().Autofarm and wait() do
+        
+        if game:GetService("Players").LocalPlayer.Status.Weapon.Value == nil then
+            local a={[1]={["inputType"]=Enum.UserInputType.Keyboard,["keyCode"]=Enum.KeyCode.E}}game:GetService("ReplicatedStorage").Remotes.Input:FireServer(unpack(a))
+        end;
+        
     pcall(function()
         for i,v in pairs(game:GetService("Workspace").Living:GetChildren()) do
             if game.Players.LocalPlayer.Character and v:FindFirstChild("HumanoidRootPart") and v:FindFirstChild("Humanoid") then
