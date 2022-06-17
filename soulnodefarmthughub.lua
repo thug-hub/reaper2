@@ -50,7 +50,7 @@ if game.PlaceId == 7056922815 then -- lobby ------------------------------------
 elseif game.PlaceId == 7298553006 then -- arena ----------------------------------------------
     repeat wait() until game:IsLoaded()
     
-    wait(5)
+    wait(15)
     
     local plr = game:GetService("Players").LocalPlayer
 local tweenService = game:GetService("TweenService")
