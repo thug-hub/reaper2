@@ -1,10 +1,9 @@
 if game.PlaceId == 7056922815 then -- lobby ------------------------------------------------------------
+    repeat wait() until game:IsLoaded()
 	
 	for i, v in next, getconnections(game.Players.LocalPlayer.Idled) do
     v:Disable();
 	end;
-	
-    repeat wait() until game:IsLoaded()
     
 	print("THUG HUB ON TOP")
 	
@@ -65,12 +64,11 @@ if game.PlaceId == 7056922815 then -- lobby ------------------------------------
     end
     
 elseif game.PlaceId == 7298553006 then -- arena ----------------------------------------------
+repeat wait() until game:IsLoaded()
 	
 	for i, v in next, getconnections(game.Players.LocalPlayer.Idled) do
     v:Disable();
-end;
-	
-    repeat wait() until game:IsLoaded()
+	end;
     
     wait(15)
     
