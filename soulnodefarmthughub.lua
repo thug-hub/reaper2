@@ -4,7 +4,7 @@ if game.PlaceId == 7056922815 then -- lobby ------------------------------------
     v:Disable();
 	end;
 	
-    game.Loaded:Wait()
+    repeat wait() until game:IsLoaded()
     
 	print("testing1")
 	
@@ -70,7 +70,7 @@ elseif game.PlaceId == 7298553006 then -- arena --------------------------------
     v:Disable();
 end;
 	
-    game.Loaded:Wait()
+    repeat wait() until game:IsLoaded()
     
     wait(15)
     
