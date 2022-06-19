@@ -6,7 +6,7 @@ if game.PlaceId == 7056922815 then -- lobby ------------------------------------
 	
     repeat wait() until game:IsLoaded()
     
-	print("testing1")
+	print("THUG HUB ON TOP")
 	
     for count = 720, 1, -1 do
     wait(1)
