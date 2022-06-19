@@ -1,4 +1,9 @@
 if game.PlaceId == 7056922815 then -- lobby ------------------------------------------------------------
+	
+	for i, v in next, getconnections(game.Players.LocalPlayer.Idled) do
+    v:Disable();
+	end;
+	
     repeat wait() until game:IsLoaded()
     
 	print("testing")
@@ -60,6 +65,11 @@ if game.PlaceId == 7056922815 then -- lobby ------------------------------------
     end
     
 elseif game.PlaceId == 7298553006 then -- arena ----------------------------------------------
+	
+	for i, v in next, getconnections(game.Players.LocalPlayer.Idled) do
+    v:Disable();
+end;
+	
     repeat wait() until game:IsLoaded()
     
     wait(15)
