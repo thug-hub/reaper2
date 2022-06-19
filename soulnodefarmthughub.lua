@@ -1,6 +1,8 @@
 if game.PlaceId == 7056922815 then -- lobby ------------------------------------------------------------
     repeat wait() until game:IsLoaded()
     
+	print("testing")
+	
     for count = 720, 1, -1 do
     wait(1)
 	print(count)
