@@ -7,7 +7,7 @@ if game.PlaceId == 7056922815 then -- lobby ------------------------------------
     
 	print("THUG HUB ON TOP")
 	
-    for count = 720, 1, -1 do
+    for count = 750, 1, -1 do
     wait(1)
 	print(count)
     end
