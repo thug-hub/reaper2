@@ -62,6 +62,14 @@ if game.PlaceId == 7056922815 then -- lobby ------------------------------------
     local waittime = 60*a+5
     wait(waittime)
     end
+	
+	game:GetService("VirtualInputManager"):SendKeyEvent(true, "P", false, game); wait(1)
+    local a={[1]={["inputType"]=Enum.UserInputType.MouseButton1,["keyCode"]=Enum.KeyCode.Unknown}}game:GetService("ReplicatedStorage").Remotes.Input:FireServer(unpack(a))
+    wait(5)
+	
+	pressbutton(game:GetService("Players").LocalPlayer.PlayerGui.HUD.Meditation, game:GetService("Players").LocalPlayer.PlayerGui.HUD.Meditation.Options.List.BattleSecondary)
+    wait(0.5)
+	
     
 elseif game.PlaceId == 7298553006 then -- arena ----------------------------------------------
 repeat wait() until game:IsLoaded()
