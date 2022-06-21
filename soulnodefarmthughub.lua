@@ -60,7 +60,10 @@ if game.PlaceId == 7056922815 then -- lobby ------------------------------------
     local split = string.split(tostring(txt), " ")
     local a = tonumber(split[5])
     local waittime = 60*a+5
-    wait(waittime)
+    for count = waittime, 1, -1 do
+    wait(1)
+	print(count)
+    end
     end
 	
 	game:GetService("VirtualInputManager"):SendKeyEvent(true, "P", false, game); wait(1)
