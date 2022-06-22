@@ -28,7 +28,6 @@ if game.PlaceId == 7056922815 then -- lobby ------------------------------------
         vim:SendMouseButtonEvent(x,y,0,true,game,0)
         wait()
         vim:SendMouseButtonEvent(x,y,0,false,game,0)
-        wait(2.5)
         end
     end
     
@@ -43,17 +42,46 @@ if game.PlaceId == 7056922815 then -- lobby ------------------------------------
         pressbutton(game:GetService("Players").LocalPlayer.PlayerGui.IsMobile.SLOT, slott)
     end
     
+    repeat wait() until game:GetService("Players").LocalPlayer.PlayerGui.IsMobile.WP.PlayBT.Visible == true
+    wait(2)
+    print("step1")
+    
     pressbutton(game:GetService("Players").LocalPlayer.PlayerGui.IsMobile.WP, game:GetService("Players").LocalPlayer.PlayerGui.IsMobile.WP.PlayBT)
     
-    pressbutton(game:GetService("Players").LocalPlayer.PlayerGui.IsMobile.Frame, game:GetService("Players").LocalPlayer.PlayerGui.IsMobile.Frame.No)
+    repeat wait() until game:GetService("Players").LocalPlayer.PlayerGui.IsMobile.Frame.No.Visible == true
+    wait(2)
+    print("step2")
     
-    wait(6)
+    pressbutton(game:GetService("Players").LocalPlayer.PlayerGui.IsMobile.Frame, game:GetService("Players").LocalPlayer.PlayerGui.IsMobile.Frame.No)
+    repeat wait() until game.Players.LocalPlayer.Character
+    print("step3")
+    
+        game:GetService("RunService").Stepped:Connect(function()
+        for i,v in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
+            if v:IsA("BasePart") and v.CanCollide == true then
+                    v.CanCollide = false
+                    game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(0,0,0)
+                    game.Players.LocalPlayer.Character.Humanoid:ChangeState(11)
+                    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(168.743, 7.1084, 1241.43)
+                end
+            end
+        end)
+    
+    print("step4")
+    while true do wait()
+        
+    repeat
+    wait(2)
+    if game:GetService("Players").LocalPlayer.PlayerGui.HUD.Meditation.Options.List.BattleSecondary.Visible == false then
     game:GetService("VirtualInputManager"):SendKeyEvent(true, "P", false, game); wait(1)
     local a={[1]={["inputType"]=Enum.UserInputType.MouseButton1,["keyCode"]=Enum.KeyCode.Unknown}}game:GetService("ReplicatedStorage").Remotes.Input:FireServer(unpack(a))
-    wait(5)
+    end
+    until game:GetService("Players").LocalPlayer.PlayerGui.HUD.Meditation.Options.List.BattleSecondary.Visible == true
+    
+    wait(2)
     
     pressbutton(game:GetService("Players").LocalPlayer.PlayerGui.HUD.Meditation, game:GetService("Players").LocalPlayer.PlayerGui.HUD.Meditation.Options.List.BattleSecondary)
-    wait(0.5)
+    wait(2)
     
     if game:GetService("Players").LocalPlayer.PlayerGui.HUD.Error.Visible then
     local txt = game:GetService("Players").LocalPlayer.PlayerGui.HUD.Error.Text
@@ -66,13 +94,16 @@ if game.PlaceId == 7056922815 then -- lobby ------------------------------------
     end
     end
 	
+	if game:GetService("Players").LocalPlayer.PlayerGui.HUD.Meditation.Options.List.BattleSecondary.Visible == false then
 	game:GetService("VirtualInputManager"):SendKeyEvent(true, "P", false, game); wait(1)
     local a={[1]={["inputType"]=Enum.UserInputType.MouseButton1,["keyCode"]=Enum.KeyCode.Unknown}}game:GetService("ReplicatedStorage").Remotes.Input:FireServer(unpack(a))
     wait(5)
+    end
 	
 	pressbutton(game:GetService("Players").LocalPlayer.PlayerGui.HUD.Meditation, game:GetService("Players").LocalPlayer.PlayerGui.HUD.Meditation.Options.List.BattleSecondary)
     wait(0.5)
 	
+	end
     
 elseif game.PlaceId == 7298553006 then -- arena ----------------------------------------------
 repeat wait() until game:IsLoaded()
@@ -81,7 +112,8 @@ repeat wait() until game:IsLoaded()
     v:Disable();
 	end;
     
-    wait(15)
+    repeat wait() until game.Players.LocalPlayer.Character
+    wait(2)
     
     local plr = game:GetService("Players").LocalPlayer
 local tweenService = game:GetService("TweenService")
