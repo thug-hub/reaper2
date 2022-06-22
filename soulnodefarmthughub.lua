@@ -62,7 +62,7 @@ if game.PlaceId == 7056922815 then -- lobby ------------------------------------
                     v.CanCollide = false
                     game.Players.LocalPlayer.Character.HumanoidRootPart.Velocity = Vector3.new(0,0,0)
                     game.Players.LocalPlayer.Character.Humanoid:ChangeState(11)
-                    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(168.743, 7.1084, 1241.43)
+                    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(162.743, 18.8584, 1245.43)
                 end
             end
         end)
