@@ -71,7 +71,7 @@ if game.PlaceId == 7056922815 then -- lobby ------------------------------------
     while true do wait()
         
     repeat
-    wait(2)
+    wait(5)
     if game:GetService("Players").LocalPlayer.PlayerGui.HUD.Meditation.Options.List.BattleSecondary.Visible == false then
     game:GetService("VirtualInputManager"):SendKeyEvent(true, "P", false, game); wait(1)
     local a={[1]={["inputType"]=Enum.UserInputType.MouseButton1,["keyCode"]=Enum.KeyCode.Unknown}}game:GetService("ReplicatedStorage").Remotes.Input:FireServer(unpack(a))
